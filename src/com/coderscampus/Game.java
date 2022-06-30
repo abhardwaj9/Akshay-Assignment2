@@ -28,22 +28,21 @@ public class Game {
 	}
 
 	private void numbVerify() {
+		
+		double num = Math.random();
+		int randomInt = (int)(num*100+1);
 
-		int randomInt = (int) (100.0 * Math.random());
-
-		int guessedNumber = getNumber();
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
+			int guessedNumber = getNumber();
 			if (guessedNumber == randomInt) {
 				System.out.println("You win!!");
 				i = 5;
 			} else if (guessedNumber > randomInt) {
 				System.out.println("Please pick a lower number");
-				guessedNumber = getNumber();
 			} else if (guessedNumber < randomInt) {
 				System.out.println("Please pick a Higher number");
-				guessedNumber = getNumber();
 			}
-			if (i == 3) {
+			if (i == 4) {
 				System.out.println("You loose!!");
 				System.out.println("The number to guess was: " + randomInt);
 			}
